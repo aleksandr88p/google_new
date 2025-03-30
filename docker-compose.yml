@@ -1,0 +1,13 @@
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./counter_data:/app/counter_data
+      - ./api2_V_2/results:/app/results
+      - ./api2_V_2/screenshots:/app/screenshots
+    env_file:
+      - .env
+    restart: unless-stopped
